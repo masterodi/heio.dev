@@ -1,11 +1,12 @@
 import { animate, spring } from 'motion';
-import { createEffect, createSignal, onMount } from 'solid-js';
-import { GithubIcon, LinkedinIcon } from '~/components/icons';
+import { createEffect, createSignal, lazy, onMount } from 'solid-js';
 import LoadingIndicator from '~/components/LoadingIndicator';
 import { createMessage } from './actions';
 
+const Navbar = lazy(() => import('./navbar'));
+
 export default function Home() {
-	let containerRef, buttonRef, linkedinIconRef, githubIconRef, toastRef;
+	let containerRef, buttonRef, toastRef;
 	const [text, setText] = createSignal('');
 	const [loading, setLoading] = createSignal(false);
 	const [success, setSuccess] = createSignal(false);
@@ -21,29 +22,18 @@ export default function Home() {
 		await createMessage({ text: text() });
 		setLoading(false);
 		setSuccess(true);
+		setText('');
 	};
 
 	onMount(() => {
-		const windowHeight = window.innerHeight;
-		const windowWidth = window.innerWidth;
-		let keyframes = { y: [-windowHeight, 0] };
-
-		if (windowWidth <= 840) {
-			keyframes = { x: [-windowWidth, 0] };
-		}
+		document.body.style = '';
+		const { innerWidth: windowWidth } = window;
 
 		animate(
 			containerRef,
 			{ x: [-windowWidth, 0] },
 			{ easing: spring({ stiffness: 54 }) },
 		);
-		animate(githubIconRef, keyframes, {
-			easing: spring({ stiffness: 36 }),
-		});
-		animate(linkedinIconRef, keyframes, {
-			easing: spring({ stiffness: 36 }),
-			delay: 0.2,
-		});
 	});
 
 	createEffect(() => {
@@ -53,7 +43,7 @@ export default function Home() {
 	});
 
 	createEffect(() => {
-		const windowWidth = window.innerWidth;
+		const { innerWidth: windowWidth } = window;
 
 		if (success()) {
 			animate(toastRef, { x: [windowWidth, 0] }, { duration: 0.5 });
@@ -107,24 +97,7 @@ export default function Home() {
 					</section>
 				</div>
 				<aside class="aside">
-					<nav class="navbar">
-						<a
-							ref={linkedinIconRef}
-							href="https://www.linkedin.com/in/ovidiu-d/"
-							target="_blank"
-							class="icon"
-						>
-							<LinkedinIcon />
-						</a>
-						<a
-							ref={githubIconRef}
-							href="https://github.com/masterodi"
-							target="_blank"
-							class="icon"
-						>
-							<GithubIcon />
-						</a>
-					</nav>
+					<Navbar />
 				</aside>
 			</main>
 
