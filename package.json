@@ -1,27 +1,32 @@
 {
-  "name": "astro",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/react": "^3.1.1",
-    "@astrojs/vercel": "^7.5.2",
-    "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.24",
-    "@vercel/analytics": "^1.2.2",
-    "astro": "^4.5.16",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-type-animation": "^3.2.0"
-  },
-  "devDependencies": {
-    "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0"
-  }
+	"name": "example-basic",
+	"type": "module",
+	"scripts": {
+		"dev": "vinxi dev",
+		"build": "vinxi build",
+		"start": "vinxi start",
+		"version": "vinxi version",
+		"db:push": "drizzle-kit push"
+	},
+	"dependencies": {
+		"@libsql/client": "^0.5.6",
+		"@solidjs/meta": "^0.29.4",
+		"@solidjs/router": "^0.14.1",
+		"@solidjs/start": "^1.0.6",
+		"@supabase/supabase-js": "^2.45.4",
+		"drizzle-orm": "^0.33.0",
+		"motion": "^10.18.0",
+		"solid-js": "^1.8.18",
+		"vinxi": "^0.4.1"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"devDependencies": {
+		"drizzle-kit": "^0.24.2",
+		"prettier": "^3.3.3",
+		"stylelint": "^16.9.0",
+		"stylelint-config-recess-order": "^5.1.0",
+		"stylelint-prettier": "^5.0.2"
+	}
 }
