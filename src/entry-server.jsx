@@ -27,8 +27,10 @@ export default createHandler(() => (
 					/>
 					{assets}
 				</head>
-				<body style="display: none;">
-					<div id="app">{children}</div>
+				<body>
+					<div id="app" style="display: none;">
+						{children}
+					</div>
 					{scripts}
 				</body>
 			</html>
