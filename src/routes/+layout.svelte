@@ -21,6 +21,10 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
 		rel="stylesheet" />
+	<script
+		defer
+		src="https://static.cloudflareinsights.com/beacon.min.js"
+		data-cf-beacon={JSON.stringify({ token: '77044cf0ff0c49d59f63d8713cde3d50' })}></script>
 </svelte:head>
 
 <div class="app">
