@@ -35,7 +35,7 @@
 	}
 
 	.title-m {
-		@apply text-5xl font-semibold;
+		@apply text-4xl font-semibold;
 	}
 
 	.title-s {

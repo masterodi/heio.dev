@@ -15,9 +15,11 @@
 </svelte:head>
 
 <section class="relative z-20 grid min-h-screen animate-fade-in place-items-center p-4 opacity-0">
-	<div class="flex flex-col items-center justify-center gap-8 text-center">
-		<h2 class="title-m">Welcome!</h2>
-		<h1 class="title-l">I like building apps. <br /> Let me build your app.</h1>
+	<div class="flex flex-col items-center justify-center gap-12 text-center">
+		<h2 class="title-m">Hello there!</h2>
+		<h1 class="title-s sm:title-m md:title-l font-accent leading-relaxed">
+			I like building apps. <br /> Let me build your app.
+		</h1>
 		<h3 class="title-s leading-relaxed">
 			Contact me at <address>
 				<a href="mailto:ovidiud.dev@proton.me">ovidiud.dev@proton.me</a>

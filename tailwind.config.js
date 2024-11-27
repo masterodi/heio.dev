@@ -4,6 +4,9 @@ export default {
 
 	theme: {
 		extend: {
+			screens: {
+				sm: '420px'
+			},
 			colors: {
 				base: {
 					DEFAULT: '#181818',
