@@ -11,7 +11,7 @@
 
 <svelte:head>
 	<title>heio.dev</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Personal Website" />
 </svelte:head>
 
 <section class="relative z-20 grid min-h-screen animate-fade-in place-items-center p-4 opacity-0">
